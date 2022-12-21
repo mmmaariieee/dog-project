@@ -35,8 +35,13 @@ ActiveRecord::Schema.define(version: 2022_12_20_041005) do
   end
 
   create_table "dogs", force: :cascade do |t|
+    t.string "image_url"
     t.string "name"
     t.string "about"
+    t.string "gender"
+    t.string "coat_length"
+    t.string "size"
+    t.string "coat_color"
     t.date "date_of_birth"
     t.integer "price"
     t.string "location"
@@ -72,6 +77,8 @@ ActiveRecord::Schema.define(version: 2022_12_20_041005) do
     t.string "first_name"
     t.string "last_name"
     t.string "username"
+    t.string "email"
+    t.string "phone_number"
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
