@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
+  resources :dogs, only: :index
+  resources :users, only: :index
+  resources :carts, only: :index
+  resources :breeds, only: :index
+  resources :likes, only: :index
+  resources :reviews, only: :index
+  resources :cart_dogs, only: :index
   
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!

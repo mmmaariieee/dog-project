@@ -1,4 +1,4 @@
 class Breed < ApplicationRecord
     has_many :dogs, dependent: :destroy
-    has_many :users, through: :dogs
+    has_many :users, {:through=>:dogs, :source=>"user"}
 end
