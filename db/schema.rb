@@ -44,7 +44,8 @@ ActiveRecord::Schema.define(version: 2022_12_20_041005) do
     t.string "coat_color"
     t.date "date_of_birth"
     t.integer "price"
-    t.string "location"
+    t.string "city"
+    t.string "state"
     t.integer "breed_id", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false

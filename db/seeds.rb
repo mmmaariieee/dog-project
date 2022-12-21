@@ -40,7 +40,8 @@ puts "Seeding dogs..."
                      coat_color: Faker::Color.color_name,
                      date_of_birth: Faker::Date.between(from: '2012-09-23', to: '2022-12-25'),
                      price: rand(1...100).to_s + '00',
-                     location: {city: Faker::Address.city, state: Faker::Address.state},
+                     city: Faker::Address.city,
+                     state: Faker::Address.state,
                      breed: Breed.all.sample,
                      user: User.all.sample)}
 

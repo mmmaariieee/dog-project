@@ -10,7 +10,8 @@ class CreateDogs < ActiveRecord::Migration[6.1]
       t.string :coat_color
       t.date :date_of_birth
       t.integer :price
-      t.string :location
+      t.string :city
+      t.string :state
       t.belongs_to :breed, null: false, foreign_key: true
       t.belongs_to :user, null: false, foreign_key: true
 
