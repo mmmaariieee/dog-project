@@ -5,7 +5,7 @@ function DogCard({dog, dogs, setDogs}) {
   const { id, image_url, name, about, gender, coat_length, size, coat_color, date_of_birth, price, location, likes, reviews } = dog
   const navigate = useNavigate()
 
-    function handleDelete(e) {
+    function handleDelete() {
         fetch(`/dogs/${id}`, {
             method: 'DELETE',
         })

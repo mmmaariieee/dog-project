@@ -1,6 +1,6 @@
-import { useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-// import ReviewContainer from './ReviewContainer'
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import ReviewContainer from './ReviewContainer';
 
 function DogDetails() {
   const [dog, setDog] = useState({})
@@ -28,7 +28,7 @@ function DogDetails() {
   if(loading) return <div className="loading"><div></div><div></div><div></div><div></div></div>
   if(errors) return <h1>{errors}</h1>
 
-  const { id, image_url, name, about, gender, coat_length, size, coat_color, date_of_birth, price, location } = dog
+  const { id, image_url, name, about, gender, coat_length, size, coat_color, date_of_birth, price, location, reviews, likes } = dog
 
   return (
       <div className="content">
@@ -42,7 +42,7 @@ function DogDetails() {
               <h3>Size: </h3>
               <p>{size}</p>
               <h3>Reviews : </h3>
-              {/* <div><ReviewContainer reviews={reviews}/></div> */}
+              <div><ReviewContainer reviews={reviews}/></div>
             </div>
           </div>
       </div>
