@@ -41,6 +41,7 @@ function App() {
             <Route path="/welcome" element={<Welcome user={user}/>} />
             <Route path="/profile" element={<UserProfile user={user}/>}/>
             <Route path="/dogs/:id" element={<DogDetails dogs={dogs}/>}/>
+            <Route  path='/dogs/:id/edit' element={<EditDogForm updateDog={updateDog}/>}/>
           </Routes>
         ) : (
           <Routes>
