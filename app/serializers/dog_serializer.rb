@@ -5,4 +5,7 @@ class DogSerializer < ActiveModel::Serializer
     "#{self.object.city}, #{self.object.state}"
   end
 
+  has_many :reviews
+  has_many :likes
+
 end

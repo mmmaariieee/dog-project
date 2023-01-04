@@ -18,10 +18,10 @@ function DogCard({dog, dogs, setDogs}) {
     return (
       <>
       <div className="dog">
-        <Link className="item-link" to={`/books/${id}`}> <h2>{name}</h2></Link>
+        <Link className="item-link" to={`/dogs/${id}`}> <h2>{name}</h2></Link>
           <p className="book-detail">About: {about}</p>
           <p className="book-detail">Gender: <i>{gender}</i></p>
-          <button className="button"><Link id="edit-button" to={`/books/${id}/edit`}>Edit</Link></button>
+          <button className="button"><Link id="edit-button" to={`/dogs/${id}/edit`}>Edit</Link></button>
           <button className="button" onClick={handleDelete} >Delete</button>
       </div>
     </>

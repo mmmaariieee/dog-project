@@ -6,6 +6,7 @@ import NavBar from "./NavBar";
 import Home from "./Home";
 import Welcome from "./Welcome";
 import UserProfile from "./UserProfile";
+import DogDetails from "./DogDetails";
 
 function App() {
 
@@ -36,9 +37,10 @@ function App() {
       <main>
         {user ? (
           <Routes>
-            <Route path="/" element={<Home user={user} dogs={dogs} setDogs={setDogs} />} />
-            <Route path="/welcome" element={<Welcome user={user} />} />
+            <Route path="/" element={<Home user={user} dogs={dogs} setDogs={setDogs}/>} />
+            <Route path="/welcome" element={<Welcome user={user}/>} />
             <Route path="/profile" element={<UserProfile user={user}/>}/>
+            <Route path="/dogs/:id" element={<DogDetails dogs={dogs}/>}/>
           </Routes>
         ) : (
           <Routes>
