@@ -1,7 +1,7 @@
 import React from "react";
 import DogContainer from "./DogContainer";
 
-function Home({ user, dogs, setDogs }) {
+function Home({ user, dogs, setDogs, onDeleteDog }) {
 
     if (user) {
         console.log(user.username)
@@ -14,7 +14,7 @@ function Home({ user, dogs, setDogs }) {
             {user ? (
                 <>
                     <h1>Welcome, {user.username}!</h1>
-                    <DogContainer dogs={dogs} setDogs={setDogs} />
+                    <DogContainer dogs={dogs} setDogs={setDogs} onDeleteDog={onDeleteDog} />
                 </>
             ) : (
                 <h1>Please Login or Sign Up</h1>

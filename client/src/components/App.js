@@ -30,6 +30,12 @@ function App() {
 
   console.log(dogs)
 
+  function handleDeleteDog(deletedDog) {
+    setDogs((dogs) =>
+      dogs.filter((dog) => dog.id !== deletedDog.id)
+    );
+  }
+
 
   return (
     <>
@@ -37,7 +43,7 @@ function App() {
       <main>
         {user ? (
           <Routes>
-            <Route path="/" element={<Home user={user} dogs={dogs} setDogs={setDogs}/>} />
+            <Route path="/" element={<Home user={user} dogs={dogs} setDogs={setDogs} onDeleteDog={handleDeleteDog} />} />
             <Route path="/welcome" element={<Welcome user={user}/>} />
             <Route path="/profile" element={<UserProfile user={user}/>}/>
             <Route path="/dogs/:id" element={<DogDetails dogs={dogs}/>}/>

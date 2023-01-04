@@ -1,16 +1,20 @@
 import React from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 
-function DogCard({dog, dogs, setDogs}) {
+function DogCard({dog, dogs, setDogs, onDeleteDog }) {
   const { id, image_url, name, about, gender, coat_length, size, coat_color, date_of_birth, price, location, likes, reviews } = dog
   const navigate = useNavigate()
 
     function handleDelete() {
         fetch(`/dogs/${id}`, {
             method: 'DELETE',
+        }).then((r) => {
+            if (r.ok) {
+                onDeleteDog(dog);
+            }
         })
-        navigate('/')
-        window.location.reload(false);
+        // navigate('/')
+        // window.location.reload(false)
     }
     
     console.log(name)
