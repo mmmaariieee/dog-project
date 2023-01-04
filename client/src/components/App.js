@@ -10,7 +10,7 @@ import UserProfile from "./UserProfile";
 function App() {
 
   const [user, setUser] = useState(null);
-  const [dogs, setDogs] = useState({});
+  const [dogs, setDogs] = useState([]);
 
   useEffect(() => {
     // auto-login
@@ -36,7 +36,7 @@ function App() {
       <main>
         {user ? (
           <Routes>
-            <Route path="/" element={<Home user={user} dogs={dogs} />} />
+            <Route path="/" element={<Home user={user} dogs={dogs} setDogs={setDogs} />} />
             <Route path="/welcome" element={<Welcome user={user} />} />
             <Route path="/profile" element={<UserProfile user={user}/>}/>
           </Routes>
