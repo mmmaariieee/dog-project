@@ -6,12 +6,15 @@ Rails.application.routes.draw do
   post '/login', to: "sessions#create"
   delete '/logout', to: "sessions#destroy"
 
+  get "/dogs/:id/reviews", to: "reviews#dogreviews"
+  delete "/dogs/:id/reviews/:revid", to: "reviews#dogreviewsdestroy"
+
   resources :dogs
   resources :users, only: :index
   resources :carts, only: :index
   resources :breeds, only: :index
   resources :likes, only: :index
-  resources :reviews, only: :index
+  resources :reviews
   resources :cart_dogs, only: :index
   
   # Routing logic: fallback requests for React Router.

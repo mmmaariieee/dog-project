@@ -4,6 +4,7 @@ import ReviewContainer from './ReviewContainer';
 
 function DogDetails() {
   const [dog, setDog] = useState({})
+  const [displayedReviews, setDisplayedReviews] = useState([])
   const [loading, setLoading] = useState(true)
   const [errors, setErrors] = useState(false)
   const params = useParams()
@@ -23,12 +24,34 @@ function DogDetails() {
     })
   },[params.id])
 
-  console.log(dog)
- 
+  const { id, image_url, name, about, gender, coat_length, size, coat_color, date_of_birth, price, location, reviews, likes } = dog
+
+  console.log(`/dogs/${params.id}/reviews`)
+  
+  useEffect(() => {
+    fetch(`/dogs/${params.id}/reviews`)
+      .then((r) => r.json())
+      .then((data) => setDisplayedReviews(data));
+  }, []);
+
+  console.log(displayedReviews)
+
   if(loading) return <div className="loading"><div></div><div></div><div></div><div></div></div>
   if(errors) return <h1>{errors}</h1>
+  
+  // console.log(reviews)
 
-  const { id, image_url, name, about, gender, coat_length, size, coat_color, date_of_birth, price, location, reviews, likes } = dog
+  function handleDeleteReview(deletedReview) {
+    // const newReviews = reviews.filter((review) => review.id !== deletedReview.id)
+
+    // setDog((dog) =>
+    //   dog.reviews.filter((review) => review.id !== deletedReview.id)
+    // )
+
+    setDisplayedReviews((displayedReviews) =>
+      displayedReviews.filter((displayedReview) => displayedReview.id !== deletedReview.id)
+    )
+  }
 
   return (
       <div className="content">
@@ -42,7 +65,7 @@ function DogDetails() {
               <h3>Size: </h3>
               <p>{size}</p>
               <h3>Reviews : </h3>
-              <div><ReviewContainer reviews={reviews}/></div>
+              <div><ReviewContainer reviews={displayedReviews} onDeleteReview={handleDeleteReview} /></div>
             </div>
           </div>
       </div>
