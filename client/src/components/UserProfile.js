@@ -1,19 +1,22 @@
 import { useEffect, useState } from 'react'
-import {useParams} from 'react-router-dom'
+import {Link, useNavigate, useParams} from 'react-router-dom';
 
 function UserProfile({user}){
 
+    const [allLikes, setAllLikes] = useState([])
     const {first_name, last_name, username, image_url, likes} = user
 
-    console.log(user)
-    console.log(likes)
-    likes.map(element => {
-        console.log(element.user_id)
-    })
+    useEffect(() => {
+        fetch("/likes")
+            .then(r => r.json())
+            .then(data => setAllLikes(data.filter((like) => like.user_id === user.id)))
+    }, [setAllLikes]);
 
-    const dLikes = likes.map(element => {
-        <p>{element.user_id}</p>
-    })
+
+    console.log(user.id)
+    console.log(allLikes)
+
+
 
     return (
         <div>
@@ -21,6 +24,8 @@ function UserProfile({user}){
             <h3>Account</h3>
             <p>{image_url}</p>
             <p>{username}</p>
+            <h3>The dogs I liked:</h3>
+            {allLikes.map(like => <Link key={like.dog.id} className="item-link" to={`/dogs/${like.dog.id}`}> <h2>{like.dog.name}</h2></Link>)}
         </div>
     )
 }

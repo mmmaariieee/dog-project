@@ -25,17 +25,17 @@ function DogCard({dog, dogs, setDogs, onDeleteDog }) {
     console.log(amountLikes)
 
     return (
-      <>
-      <div className="dog">
-        <Link className="item-link" to={`/dogs/${id}`}> <h2>{name}</h2></Link>
-          <p className="book-detail">About: {about}</p>
-          <p className="book-detail">Gender: <i>{gender}</i></p>
-          <p>{amountLikes} ❤️</p>
-          <button className="button"><Link id="edit-button" to={`/dogs/${id}/edit`}>Edit</Link></button>
-          <button className="button" onClick={handleDelete} >Delete</button>
-      </div>
-    </>
-  );
+        <>
+            <div className="dog">
+                <Link className="item-link" to={`/dogs/${id}`}> <h2>{name}</h2></Link>
+                <p className="book-detail">About: {about}</p>
+                <p className="book-detail">Gender: <i>{gender}</i></p>
+                <p>{amountLikes} ❤️</p>
+                <button className="button"><Link id="edit-button" to={`/dogs/${id}/edit`}>Edit</Link></button>
+                <button className="button" onClick={handleDelete} >Delete</button>
+            </div>
+        </>
+    );
 }
 
 export default DogCard;
