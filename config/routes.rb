@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get "/dogs/:id/likes", to: "likes#doglikes"
   delete "/dogs/:id/likes/:likid", to: "likes#doglikesdestroy"
 
+  delete "/dogs/:id/cart_dogs", to: "cart_dogs#destroy"
+
   resources :dogs
   resources :users, only: :index
   resources :carts, only: :index

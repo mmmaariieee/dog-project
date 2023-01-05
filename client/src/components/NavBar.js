@@ -23,6 +23,7 @@ function NavBar({ user, setUser }) {
         {user ? (
           <>
             <Link to="/dogs/new">Add a Dog</Link>
+            <Link to="/my_cart">My Cart</Link>
             <Link to="/profile">My Profile</Link>
             <button onClick={handleLogoutClick}>Logout</button>
           </>
