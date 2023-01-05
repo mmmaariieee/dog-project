@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :breeds, only: :index
   resources :likes, only: [:index, :create]
   resources :reviews
-  resources :cart_dogs, only: :index
+  resources :cart_dogs, only: [:index, :create]
   
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!

@@ -3,4 +3,5 @@ class UserSerializer < ActiveModel::Serializer
 
   has_many :likes
   has_many :reviews
+  has_one :cart
 end
