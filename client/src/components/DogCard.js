@@ -32,6 +32,7 @@ function DogCard({ user, dog, onDeleteDog }) {
         <>
             <div className="dog">
                 <Link className="item-link" to={`/dogs/${id}`}> <h2>{name}</h2></Link>
+                <img src={image_url} alt={name} />
                 <p className="book-detail">About: {about}</p>
                 <p className="book-detail">Gender: <i>{gender}</i></p>
                 <Likes likes={displayedLikes} onAddLike={handleAddLike} user={user} dog={dog} />

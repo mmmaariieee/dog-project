@@ -56,6 +56,7 @@ function DogDetails({ user }) {
           <div className='wrapper'>
             <div id="book-page" >
             <h1>{name}</h1>
+            <img src={image_url} alt={name} />
               <h3>About: </h3>
               <p>{about}</p>
               <h3>Gender: </h3>

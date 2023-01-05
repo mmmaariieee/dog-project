@@ -38,7 +38,7 @@ function UserProfile({user}){
         <div>
             <h1>{first_name} {last_name}</h1>
             <h3>Account</h3>
-            <p>{image_url}</p>
+            <img src={image_url} alt={first_name} />
             <p>{username}</p>
             <h3>The dogs I liked:</h3>
             {unique.map(like => <Link key={like.dog.id} className="item-link" to={`/dogs/${like.dog.id}`}> <h2>{like.dog.name}</h2></Link>)}
