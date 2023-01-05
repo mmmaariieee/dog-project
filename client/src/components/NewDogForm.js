@@ -1,6 +1,9 @@
 import { React, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function NewDogForm({ user, onAddDog }) {
+
+    const navigate = useNavigate();
 
     const initialState = {
         image_url: "",
@@ -43,6 +46,7 @@ function NewDogForm({ user, onAddDog }) {
         .then((newDog) => {
             setFormData(initialState);
             onAddDog(newDog);
+            navigate(`/dogs/${newDog.id}`);
         })
     }
 

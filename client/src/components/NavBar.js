@@ -17,11 +17,11 @@ function NavBar({ user, setUser }) {
       </div>
       <div>
         {user ? (
-            <>
-            <Link to="/profile">My Profile</Link>
+          <>
             <Link to="/dogs/new">Add a Dog</Link>
+            <Link to="/profile">My Profile</Link>
             <button onClick={handleLogoutClick}>Logout</button>
-            </>
+          </>
         ) : (
           <>
             <Link to="/signup">Signup</Link>
