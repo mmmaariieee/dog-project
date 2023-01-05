@@ -7,6 +7,7 @@ import Home from "./Home";
 import Welcome from "./Welcome";
 import UserProfile from "./UserProfile";
 import DogDetails from "./DogDetails";
+import NewDogForm from "./NewDogForm";
 
 function App() {
 
@@ -30,6 +31,10 @@ function App() {
 
   console.log(dogs)
 
+  function handleAddDog(addedDog) {
+    setDogs((dogs) => [...dogs, addedDog]);
+  }
+
   function handleDeleteDog(deletedDog) {
     setDogs((dogs) =>
       dogs.filter((dog) => dog.id !== deletedDog.id)
@@ -47,6 +52,7 @@ function App() {
             <Route path="/welcome" element={<Welcome user={user}/>} />
             <Route path="/profile" element={<UserProfile user={user}/>}/>
             <Route path="/dogs/:id" element={<DogDetails dogs={dogs} user={user}/>}/>
+            <Route path="/dogs/new" element={<NewDogForm user={user} onAddDog={handleAddDog} />}/>
             {/* <Route  path='/dogs/:id/edit' element={<EditDogForm updateDog={updateDog}/>}/> */}
           </Routes>
         ) : (

@@ -63,9 +63,7 @@ function DogDetails({ user }) {
               <h3>Size: </h3>
               <p>{size}</p>
               <h3>Reviews : </h3>
-              <div>
-                <ReviewContainer reviews={displayedReviews} onDeleteReview={handleDeleteReview} />
-              </div>
+              <ReviewContainer reviews={displayedReviews} onDeleteReview={handleDeleteReview} />
               <NewReviewForm dog={dog} onAddReview={handleAddReview} user={user}/>
             </div>
           </div>
