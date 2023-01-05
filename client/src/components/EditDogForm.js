@@ -35,11 +35,11 @@ function EditDogForm({ user, onUpdateDog }) {
         .then(setFormData)
     },[id])
 
-    console.log(formData)
 
     const handleChange = (e) => {
         const { name, value } = e.target
         setFormData({ ...formData, [name]: value })
+        console.log(formData)
     }
 
     function handleSubmit(e){
@@ -47,10 +47,16 @@ function EditDogForm({ user, onUpdateDog }) {
         fetch(`/dogs/${id}`,{
           method:'PATCH',
           headers: {'Content-Type': 'application/json'},
-          body:JSON.stringify(formData)
+          body: JSON.stringify(formData)
         })
-        .then(res => {
-            res.json().then(onUpdateDog);
+        // .then(res => {
+        //     res.json().then(onUpdateDog);
+        //     navigate(`/dogs/${id}`);
+        // })
+        .then((r) => r.json())
+        .then((updatedDog) => {
+            onUpdateDog(updatedDog);
+            setFormData(initialState);
             navigate(`/dogs/${id}`);
         })
     }
@@ -59,19 +65,35 @@ function EditDogForm({ user, onUpdateDog }) {
         <>
             <div id="edit-dog" className='App'>
                 <div >
-                    <label>Name: </label>
-                    <input type='text' name='name' value={formData.name} onChange={handleChange} />
+                    <form onSubmit={handleSubmit}>
+                        <label>Name: </label>
+                        <input type='text' name='name' value={formData.name} onChange={handleChange} />
 
-                    <label>Gender: </label>
-                    <input type='text' name='gender' value={formData.gender} onChange={handleChange} />
+                        <label>Gender: </label>
+                        <input type='text' name='gender' value={formData.gender} onChange={handleChange} />
 
-                    <label>Price: </label>
-                    <input type='number' name='price' value={formData.price} onChange={handleChange} />
 
-                    <label>About: </label>
-                    <input type='text' name='about' value={formData.about} onChange={handleChange} />
+                        <select
+                            name='gender'
+                            value={formData.gender}
+                            onChange={handleChange}
+                        >
+                            <optgroup label="gender">
+                                <option value="Female">Female</option>
+                                <option value="Male">Male</option>
+                            </optgroup>
+                        </select>
 
-                    <input id="update-button" className="button" type='submit' value='Update Dog' onClick={handleSubmit} />
+                        <label>Price: </label>
+                        <input type='number' name='price' value={formData.price} onChange={handleChange} />
+
+                        <label>About: </label>
+                        <input type='text' name='about' value={formData.about} onChange={handleChange} />
+
+                        <input id="update-button" className="button" type='submit' value='Update Dog' 
+                        // onClick={handleSubmit} 
+                        />
+                    </form>
                 </div>
             </div>
         </>

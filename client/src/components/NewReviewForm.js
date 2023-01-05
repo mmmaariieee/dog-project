@@ -35,11 +35,12 @@ function NewReviewForm({ user, dog, onAddReview }) {
 
     return (
         <div className="card">
-            <h2>New Review</h2>
+            {/* <h2>New Review</h2> */}
             <form onSubmit={handleSubmit}>
-                <label htmlFor="message">Message: </label>
-                <textarea
+                <input
+                    type="text"
                     id="message"
+                    placeholder="Add new review"
                     value={formData.message}
                     onChange={handleChange}
                 />

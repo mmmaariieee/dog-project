@@ -37,6 +37,17 @@ function App() {
     setDogs((dogs) => [...dogs, addedDog]);
   }
 
+  function handleUpdateDog(updatedDog) {
+    // setDogs((dogs) =>
+    //   dogs.map((dog) => {
+    //     return dog.id === updatedDog.id ? updatedDog : dog;
+    //   })
+    // );
+
+    setDogs((dogs) => [...dogs, updatedDog]);
+
+  }
+
   function handleDeleteDog(deletedDog) {
     setDogs((dogs) =>
       dogs.filter((dog) => dog.id !== deletedDog.id)
@@ -55,7 +66,7 @@ function App() {
             <Route path="/profile" element={<UserProfile user={user}/>}/>
             <Route path="/dogs/:id" element={<DogDetails dogs={dogs} user={user}/>}/>
             <Route path="/dogs/new" element={<NewDogForm user={user} onAddDog={handleAddDog} />}/>
-            <Route  path='/dogs/:id/edit' element={<EditDogForm user={user}/>}/>
+            <Route  path='/dogs/:id/edit' element={<EditDogForm user={user} onUpdateDog={handleUpdateDog} />}/>
             <Route path="/my_cart" element={<CartContainer user={user}/>}/>
           </Routes>
         ) : (

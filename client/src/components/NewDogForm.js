@@ -27,6 +27,7 @@ function NewDogForm({ user, onAddDog }) {
     const [formData, setFormData] = useState(initialState);
 
     function handleChange(e) {
+        console.log(formData)
         setFormData({
           ...formData,
           [e.target.id]: e.target.value,
@@ -68,18 +69,21 @@ function NewDogForm({ user, onAddDog }) {
                     value={formData.name}
                     onChange={handleChange}
                 />
-                <label htmlFor="about">About: </label>
-                <input
-                    type="text"
-                    id="about"
-                    value={formData.about}
-                    onChange={handleChange}
-                />
-                <label htmlFor="description">Gender: </label>
-                <input
-                    type="text"
+                <label htmlFor="gender">Gender:</label>
+                <select
                     id="gender"
                     value={formData.gender}
+                    onChange={handleChange}
+                >
+                    <optgroup label="gender">
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                    </optgroup>
+                </select>
+                <label htmlFor="about">About: </label>
+                <textarea
+                    id="about"
+                    value={formData.about}
                     onChange={handleChange}
                 />
                 <label htmlFor="price">Price: </label>
@@ -90,7 +94,21 @@ function NewDogForm({ user, onAddDog }) {
                     value={formData.price}
                     onChange={handleChange}
                 />
-                <button type="submit">Submit</button>
+                <label htmlFor="city">City: </label>
+                <input
+                    type="text"
+                    id="city"
+                    value={formData.city}
+                    onChange={handleChange}
+                />
+                <label htmlFor="state">State: </label>
+                <input
+                    type="text"
+                    id="state"
+                    value={formData.state}
+                    onChange={handleChange}
+                />
+                <button type="submit">Create a Dog</button>
             </form>
 
 

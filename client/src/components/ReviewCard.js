@@ -19,10 +19,9 @@ function ReviewCard({ review, onDeleteReview }) {
     <>
       <div className="content">
         <Link to={`/dogs/${id}`}></Link>
-        <p>ID: {user.id}</p>
         <img src={user.image_url} alt={user.first_name} />
-        <p>Message: {message}</p>
         <p>By: {user.username}</p>
+        <p>Message: {message}</p>
         <button className="button" onClick={handleDelete} >Delete</button>
       </div>
     </>

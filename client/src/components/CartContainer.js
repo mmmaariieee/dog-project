@@ -56,13 +56,15 @@ function CartContainer({ user }) {
 
     return(
         <div className="grid-container">
-            {unique.map(in_cart => <>
-                <Link key={in_cart.dog.id} className="item-link" to={`/dogs/${in_cart.dog.id}`}>
+            {unique.map(in_cart => <div key={in_cart.dog.id}>
+                <img src={in_cart.dog.image_url} alt={in_cart.dog.name} />
+                <Link className="item-link" to={`/dogs/${in_cart.dog.id}`}>
                     <h2>{in_cart.dog.name}</h2>
                 </Link>
-                <p>Price: {in_cart.dog.price} $</p>
+                <p>{in_cart.dog.location}</p>
+                <h2>{in_cart.dog.price} $</h2>
                 <button className="button" onClick={() => handleDelete(in_cart)} >Delete</button>
-            </>)}
+            </div>)}
             <h2>Total: {total_price}$</h2>
         </div>
     )

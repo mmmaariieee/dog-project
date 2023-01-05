@@ -52,24 +52,25 @@ function DogDetails({ user }) {
   }
 
   return (
-      <div className="content">
-          <div className='wrapper'>
-            <div id="book-page" >
-            <h1>{name}</h1>
-            <img src={image_url} alt={name} />
-              <h3>About: </h3>
-              <p>{about}</p>
-              <h3>Gender: </h3>
-              <p>{gender}</p>
-              <h3>Size: </h3>
-              <p>{size}</p>
-              <h3>Reviews : </h3>
-              <ReviewContainer reviews={displayedReviews} onDeleteReview={handleDeleteReview} />
-              <NewReviewForm dog={dog} onAddReview={handleAddReview} user={user}/>
-            </div>
-          </div>
+    <div className="content">
+      <div className='wrapper'>
+        <div id="book-page" >
+          <img src={image_url} alt={name} />
+          <h1>{name}</h1>
+          <h2>{location}</h2>
+          <h3>Gender: {gender}</h3>
+          <h3>Size: {size}</h3>
+          <h3>Coat color: {coat_color}</h3>
+          <h3>Coat length: {coat_length}</h3>
+          <h3>About: {about}</h3>
+          <h2>{price}$</h2>
+          <h3>Reviews : </h3>
+          <ReviewContainer reviews={displayedReviews} onDeleteReview={handleDeleteReview} />
+          <NewReviewForm dog={dog} onAddReview={handleAddReview} user={user} />
+        </div>
       </div>
-    )
-  }
+    </div>
+  )
+}
 
   export default DogDetails;
