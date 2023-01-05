@@ -8,6 +8,7 @@ import Welcome from "./Welcome";
 import UserProfile from "./UserProfile";
 import DogDetails from "./DogDetails";
 import NewDogForm from "./NewDogForm";
+import EditDogForm from "./EditDogForm";
 
 function App() {
 
@@ -53,7 +54,10 @@ function App() {
             <Route path="/profile" element={<UserProfile user={user}/>}/>
             <Route path="/dogs/:id" element={<DogDetails dogs={dogs} user={user}/>}/>
             <Route path="/dogs/new" element={<NewDogForm user={user} onAddDog={handleAddDog} />}/>
-            {/* <Route  path='/dogs/:id/edit' element={<EditDogForm updateDog={updateDog}/>}/> */}
+            <Route  path='/dogs/:id/edit' element={<EditDogForm
+              user={user}
+              // updateDog={updateDog}
+            />}/>
           </Routes>
         ) : (
           <Routes>
