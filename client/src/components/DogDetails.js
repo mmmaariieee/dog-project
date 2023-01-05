@@ -1,8 +1,9 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ReviewContainer from './ReviewContainer';
+import NewReviewForm from './NewReviewForm';
 
-function DogDetails() {
+function DogDetails({ user }) {
   const [dog, setDog] = useState({})
   const [displayedReviews, setDisplayedReviews] = useState([])
   const [loading, setLoading] = useState(true)
@@ -38,15 +39,12 @@ function DogDetails() {
 
   if(loading) return <div className="loading"><div></div><div></div><div></div><div></div></div>
   if(errors) return <h1>{errors}</h1>
-  
-  // console.log(reviews)
+
+  function handleAddReview(addedReview) {
+    setDisplayedReviews((displayedReviews) => [...displayedReviews, addedReview]);
+  }
 
   function handleDeleteReview(deletedReview) {
-    // const newReviews = reviews.filter((review) => review.id !== deletedReview.id)
-
-    // setDog((dog) =>
-    //   dog.reviews.filter((review) => review.id !== deletedReview.id)
-    // )
 
     setDisplayedReviews((displayedReviews) =>
       displayedReviews.filter((displayedReview) => displayedReview.id !== deletedReview.id)
@@ -65,7 +63,10 @@ function DogDetails() {
               <h3>Size: </h3>
               <p>{size}</p>
               <h3>Reviews : </h3>
-              <div><ReviewContainer reviews={displayedReviews} onDeleteReview={handleDeleteReview} /></div>
+              <div>
+                <ReviewContainer reviews={displayedReviews} onDeleteReview={handleDeleteReview} />
+              </div>
+              <NewReviewForm dog={dog} onAddReview={handleAddReview} user={user}/>
             </div>
           </div>
       </div>

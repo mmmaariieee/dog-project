@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 
-function DogCard({dog, dogs, setDogs, onDeleteDog }) {
+function DogCard({ dog, onDeleteDog }) {
   const { id, image_url, name, about, gender, coat_length, size, coat_color, date_of_birth, price, location, likes, reviews } = dog
   const navigate = useNavigate()
 

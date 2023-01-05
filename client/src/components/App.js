@@ -46,7 +46,7 @@ function App() {
             <Route path="/" element={<Home user={user} dogs={dogs} setDogs={setDogs} onDeleteDog={handleDeleteDog} />} />
             <Route path="/welcome" element={<Welcome user={user}/>} />
             <Route path="/profile" element={<UserProfile user={user}/>}/>
-            <Route path="/dogs/:id" element={<DogDetails dogs={dogs}/>}/>
+            <Route path="/dogs/:id" element={<DogDetails dogs={dogs} user={user}/>}/>
             {/* <Route  path='/dogs/:id/edit' element={<EditDogForm updateDog={updateDog}/>}/> */}
           </Routes>
         ) : (
