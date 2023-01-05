@@ -20,7 +20,6 @@ function Login({ user, setUser }) {
       }
     });
     navigate('/welcome');
-    // window.location.reload(false);
   }
 
   return (
