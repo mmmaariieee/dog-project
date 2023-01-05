@@ -37,6 +37,7 @@ function SignUp({ setUser }) {
         navigate('/welcome');
     }
 
+
     return (
         <div>
             <form onSubmit={handleSubmit}>

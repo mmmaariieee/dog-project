@@ -11,4 +11,13 @@ class User < ApplicationRecord
     has_many :dogs, through: :reviews
 
     has_secure_password
+
+    validates :image_url, presence: true
+    validates :username, presence: true, uniqueness: true
+    validates :first_name, presence: true
+    validates :last_name, presence: true
+    validates :email, presence: true
+    validates :phone_number, presence: true, numericality: true
+    validates :password, presence: true, confirmation: true, length: { in: 6..20 }
+    validates :password_confirmation, presence: true
 end
