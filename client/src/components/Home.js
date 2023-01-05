@@ -14,7 +14,7 @@ function Home({ user, dogs, setDogs, onDeleteDog }) {
             {user ? (
                 <>
                     <h1>Welcome, {user.username}!</h1>
-                    <DogContainer dogs={dogs} setDogs={setDogs} onDeleteDog={onDeleteDog} />
+                    <DogContainer dogs={dogs} setDogs={setDogs} onDeleteDog={onDeleteDog} user={user} />
                 </>
             ) : (
                 <h1>Please Login or Sign Up</h1>

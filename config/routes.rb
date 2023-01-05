@@ -9,11 +9,14 @@ Rails.application.routes.draw do
   get "/dogs/:id/reviews", to: "reviews#dogreviews"
   delete "/dogs/:id/reviews/:revid", to: "reviews#dogreviewsdestroy"
 
+  get "/dogs/:id/likes", to: "likes#doglikes"
+  delete "/dogs/:id/likes/:likid", to: "likes#doglikesdestroy"
+
   resources :dogs
   resources :users, only: :index
   resources :carts, only: :index
   resources :breeds, only: :index
-  resources :likes, only: :index
+  resources :likes, only: [:index, :create]
   resources :reviews
   resources :cart_dogs, only: :index
   

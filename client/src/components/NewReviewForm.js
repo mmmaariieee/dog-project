@@ -9,8 +9,6 @@ function NewReviewForm({ user, dog, onAddReview }) {
     }
     const [formData, setFormData] = useState(initialState);
 
-    console.log(dog.id)
-
     function handleChange(e) {
         setFormData({
           ...formData,

@@ -1,9 +1,10 @@
-import React from 'react';
-import {Link, useNavigate} from 'react-router-dom';
+import { React, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Likes from './Likes';
 
-function DogCard({ dog, onDeleteDog }) {
+function DogCard({ user, dog, onDeleteDog }) {
+    const [displayedLikes, setDisplayedLikes] = useState([])
   const { id, image_url, name, about, gender, coat_length, size, coat_color, date_of_birth, price, location, likes, reviews } = dog
-  const navigate = useNavigate()
 
     function handleDelete() {
         fetch(`/dogs/${id}`, {
@@ -13,16 +14,19 @@ function DogCard({ dog, onDeleteDog }) {
                 onDeleteDog(dog);
             }
         })
-        // navigate('/')
-        // window.location.reload(false)
     }
-    
-    console.log(name)
-    console.log(likes)
 
-    const amountLikes = likes.length
+    useEffect(() => {
+        fetch(`/dogs/${dog.id}/likes`)
+          .then((r) => r.json())
+          .then((data) => setDisplayedLikes(data));
+    }, []);
 
-    console.log(amountLikes)
+    function handleAddLike(addedLike) {
+        setDisplayedLikes((displayedLikes) => [...displayedLikes, addedLike]);
+      }
+
+    console.log(displayedLikes)
 
     return (
         <>
@@ -30,7 +34,7 @@ function DogCard({ dog, onDeleteDog }) {
                 <Link className="item-link" to={`/dogs/${id}`}> <h2>{name}</h2></Link>
                 <p className="book-detail">About: {about}</p>
                 <p className="book-detail">Gender: <i>{gender}</i></p>
-                <p>{amountLikes} ❤️</p>
+                <Likes likes={displayedLikes} onAddLike={handleAddLike} user={user} dog={dog} />
                 <button className="button"><Link id="edit-button" to={`/dogs/${id}/edit`}>Edit</Link></button>
                 <button className="button" onClick={handleDelete} >Delete</button>
             </div>

@@ -16,6 +16,22 @@ function UserProfile({user}){
     console.log(user.id)
     console.log(allLikes)
 
+    const uniqueNames = []
+
+    const unique = allLikes.filter(like => {
+        const isDuplicate = uniqueNames.includes(like.dog_id)
+
+        if (!isDuplicate) {
+            uniqueNames.push(like.dog_id)
+
+            return true
+        }
+
+        return false
+    })
+
+    console.log(unique)
+
 
 
     return (
@@ -25,7 +41,7 @@ function UserProfile({user}){
             <p>{image_url}</p>
             <p>{username}</p>
             <h3>The dogs I liked:</h3>
-            {allLikes.map(like => <Link key={like.dog.id} className="item-link" to={`/dogs/${like.dog.id}`}> <h2>{like.dog.name}</h2></Link>)}
+            {unique.map(like => <Link key={like.dog.id} className="item-link" to={`/dogs/${like.dog.id}`}> <h2>{like.dog.name}</h2></Link>)}
         </div>
     )
 }
