@@ -53,17 +53,21 @@ function DogCard({ user, dog, onDeleteDog }) {
 
     return (
         <>
-            <div className="card">
-                <button className="button"><Link id="edit-button" to={`/dogs/${id}/edit`}>Edit</Link></button>
-                <Link className="item-link" to={`/dogs/${id}`}> <h2>{name}</h2></Link>
-                <img src={image_url} alt={name} />
-                <p>{location}</p>
-                <p className="book-detail">Gender: <i>{gender}</i></p>
-                <p className="book-detail">About: {about}</p>
-                <h1>{price}$</h1>
-                {inCart ? <p>is in cart</p> : <button className="button" onClick={handleAddToCart} >Add to cart</button>}
-                <Likes likes={displayedLikes} onAddLike={handleAddLike} user={user} dog={dog} />
-                <button className="button" onClick={handleDelete} >Delete</button>
+            <div className="card small-card">
+                <div className='center'>
+                    <button className="button"><Link id="edit-button" to={`/dogs/${id}/edit`}>Edit</Link></button>
+                    <Link className="item-link" to={`/dogs/${id}`}> <h2>{name}</h2></Link>
+                    <img src={image_url} alt={name} />
+                    <p><i>{location}</i></p>
+                    <p className="book-detail"><b>Gender:</b> {gender}</p>
+                    <p className="book-detail"><b>About:</b> {about}</p>
+                    <h1>{price}$</h1>
+                    {/* <div className="horizontal">
+                    </div> */}
+                    {inCart ? <p>is in cart</p> : <button className="button" onClick={handleAddToCart} >Add to cart</button>}
+                    <button className="button" onClick={handleDelete} >Delete</button>
+                    <Likes likes={displayedLikes} onAddLike={handleAddLike} user={user} dog={dog} />
+                </div>
             </div>
         </>
     );

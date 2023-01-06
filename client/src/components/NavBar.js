@@ -16,10 +16,7 @@ function NavBar({ user, setUser }) {
 
   return (
     <header>
-      <div>
-        <Link to="/">{user ? "All Dogs" : "Home"}</Link>
-      </div>
-      <div>
+      <Link to="/">{user ? "All Dogs" : "Home"}</Link>
         {user ? (
           <>
             <Link to="/dogs/new">Add a Dog</Link>
@@ -29,11 +26,12 @@ function NavBar({ user, setUser }) {
           </>
         ) : (
           <>
-            <Link to="/signup">Signup</Link>
-            <Link to="/login">Login</Link>
+            <div>
+              <Link to="/signup">Signup</Link>
+              <Link to="/login">Login</Link>
+            </div>
           </>
         )}
-      </div>
     </header>
   );
 }

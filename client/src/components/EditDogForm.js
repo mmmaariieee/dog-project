@@ -61,14 +61,14 @@ function EditDogForm({ user, onUpdateDog }) {
 
     return(
         <>
-            <div className="form card">
+            <div className="form card form-card">
                     <h1>Edit Dog</h1>
                     <form onSubmit={handleSubmit}>
                         <label>Name: </label>
                         <input type='text' name='name' value={formData.name} onChange={handleChange} />
 
                         <label>Gender: </label>
-                        <input type='text' name='gender' value={formData.gender} onChange={handleChange} />
+                        {/* <input type='text' name='gender' value={formData.gender} onChange={handleChange} /> */}
 
 
                         <select
@@ -88,7 +88,7 @@ function EditDogForm({ user, onUpdateDog }) {
                         <label>About: </label>
                         <input type='text' name='about' value={formData.about} onChange={handleChange} />
 
-                        <input id="update-button" className="button" type='submit' value='Update Dog' onClick={handleSubmit} />
+                        <input id="update-button" className="button center-button" type='submit' value='Update Dog' onClick={handleSubmit} />
                     </form>
             </div>
         </>

@@ -27,9 +27,9 @@ function Likes({user, dog, likes, onAddLike}) {
     }
 
     return (
-        <>
-        <h3>{likes.length} <p onClick={handleClick}>❤️</p> </h3>
-        </>
+        <div className="center-button">
+            <p onClick={handleClick}>{likes.length} ❤️</p>
+        </div>
     )
 }
 

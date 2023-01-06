@@ -9,9 +9,9 @@ function Welcome({ user }) {
     return (
         <>
             {user ? (
-                <h1>Welcome, {user.username}!</h1>
+                <h1 className="center">Welcome, {user.username}!</h1>
             ) : (
-                <h1>Please Login or Sign Up</h1>
+                <h1 className="center">Please Login or Sign Up</h1>
             )}
         </>
     )

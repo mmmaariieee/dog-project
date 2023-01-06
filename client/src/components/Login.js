@@ -23,7 +23,7 @@ function Login({ user, setUser }) {
   }
 
   return (
-    <div className="form card">
+    <div className="form card form-card">
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">Username</label>
@@ -42,7 +42,7 @@ function Login({ user, setUser }) {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Login</button>
+        <button type="submit center-button">Login</button>
       </form>
     </div>
   );

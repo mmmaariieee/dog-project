@@ -52,23 +52,21 @@ function DogDetails({ user }) {
   }
 
   return (
-    <div className="content">
-      <div className='wrapper'>
-        <div id="book-page" >
-          <img src={image_url} alt={name} />
-          <h1>{name}</h1>
-          <h2>{location}</h2>
-          <h3>Gender: {gender}</h3>
-          <h3>Size: {size}</h3>
-          <h3>Coat color: {coat_color}</h3>
-          <h3>Coat length: {coat_length}</h3>
-          <h3>About: {about}</h3>
-          <h2>{price}$</h2>
-          <h3>Reviews : </h3>
-          <ReviewContainer reviews={displayedReviews} onDeleteReview={handleDeleteReview} />
-          <NewReviewForm dog={dog} onAddReview={handleAddReview} user={user} />
-        </div>
+    <div >
+      <div className="card center medium-card">
+        <img src={image_url} alt={name} />
+        <h1>{name}</h1>
+        <p><i>{location}</i></p>
+        <p><b>Gender:</b> {gender}</p>
+        <p><b>Size:</b> {size}</p>
+        <p><b>Coat color:</b> {coat_color}</p>
+        <p><b>Coat length:</b> {coat_length}</p>
+        <p><b>About:</b> {about}</p>
+        <h2>{price}$</h2>
       </div>
+      <h3 className='center'>Reviews : </h3>
+      <ReviewContainer reviews={displayedReviews} onDeleteReview={handleDeleteReview} />
+      <NewReviewForm dog={dog} onAddReview={handleAddReview} user={user} />
     </div>
   )
 }

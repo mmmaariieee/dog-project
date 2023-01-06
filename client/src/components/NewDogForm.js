@@ -52,7 +52,7 @@ function NewDogForm({ user, onAddDog }) {
     }
 
     return (
-        <div className="form card">
+        <div className="form card form-card">
             <h1>New Dog</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="image_url">Image URL: </label>
@@ -108,7 +108,7 @@ function NewDogForm({ user, onAddDog }) {
                     value={formData.state}
                     onChange={handleChange}
                 />
-                <button type="submit">Create a Dog</button>
+                <button className="center-button" type="submit">Create a Dog</button>
             </form>
 
 

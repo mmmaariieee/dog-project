@@ -17,11 +17,15 @@ function ReviewCard({ review, onDeleteReview }) {
 
   return (
     <>
-      <div className="content">
-        <Link to={`/dogs/${id}`}></Link>
-        <img src={user.image_url} alt={user.first_name} />
-        <p>By: {user.username}</p>
-        <p>Message: {message}</p>
+      <div className="card filters justify">
+        {/* <Link to={`/dogs/${id}`}></Link> */}
+        <div className='filters'>
+          <img className="small-img" src={user.image_url} alt={user.first_name} />
+          <div className='padding-left'>
+            <h3>{user.username}</h3>
+            <p>{message}</p>
+          </div>
+        </div>
         <button className="button" onClick={handleDelete} >Delete</button>
       </div>
     </>

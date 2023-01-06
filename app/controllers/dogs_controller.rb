@@ -35,3 +35,6 @@ class DogsController < ApplicationController
         params.permit(:id, :image_url, :name, :about, :gender, :coat_length, :size, :coat_color, :date_of_birth, :price, :city, :state, :breed_id, :user_id, :reviews, :likes)
     end
 end
+
+
+# , dog: [:image_url, :name, :about, :gender, :price, :city, :state, :breed_id, :user_id]
