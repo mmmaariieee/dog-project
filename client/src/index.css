@@ -16,8 +16,12 @@ img {
   width: 200px;
 }
 
+.img-h {
+  height: 150px;
+}
+
 .small-img {
-  width: 50px;
+  width: 60px;
 }
 
 /* dddddddddddd */
@@ -183,4 +187,23 @@ form button[type="submit"] {
 .button {
   width: 100px;
   height: 20px;
+}
+
+
+
+
+
+
+
+/* takes off underlining of the links */
+
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+
+
+
+.margin-right {
+  margin-right: 30px;
 }

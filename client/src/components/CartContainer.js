@@ -65,7 +65,7 @@ function CartContainer({ user }) {
                     <p><i>{in_cart.dog.location}</i></p>
                 </div>
                 <h2>{in_cart.dog.price} $</h2>
-                <button className="button" onClick={() => handleDelete(in_cart)} >Delete</button>
+                <button className="button margin-right" onClick={() => handleDelete(in_cart)} >Delete</button>
             </div>)}
             <h2>Total: {total_price}$</h2>
         </div>

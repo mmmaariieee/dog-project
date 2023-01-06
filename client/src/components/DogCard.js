@@ -57,7 +57,7 @@ function DogCard({ user, dog, onDeleteDog }) {
                 <div className='center'>
                     <button className="button"><Link id="edit-button" to={`/dogs/${id}/edit`}>Edit</Link></button>
                     <Link className="item-link" to={`/dogs/${id}`}> <h2>{name}</h2></Link>
-                    <img src={image_url} alt={name} />
+                    <img className="img-h" src={image_url} alt={name} />
                     <p><i>{location}</i></p>
                     <p className="book-detail"><b>Gender:</b> {gender}</p>
                     <p className="book-detail"><b>About:</b> {about}</p>

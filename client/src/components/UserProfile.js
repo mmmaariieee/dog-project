@@ -48,7 +48,7 @@ function UserProfile({user}){
                 {unique.map(like => 
                 <div className='card small-card' key={like.dog.id}>
                     <div className='center'>
-                        <img src={like.dog.image_url} alt={like.dog.name} />
+                        <img className="img-h" src={like.dog.image_url} alt={like.dog.name} />
                         <Link className="item-link" to={`/dogs/${like.dog.id}`}> <h2>{like.dog.name}</h2></Link>
                         <p><i>{like.dog.location}</i></p>
                     </div>
