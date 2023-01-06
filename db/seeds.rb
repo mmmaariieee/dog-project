@@ -88,9 +88,9 @@ end
 
 puts "Seeding dogs..."
 
-for each in dog_pictures do
+dog_pictures.each do |picture|
     Dog.create(name: Faker::Creature::Dog.unique.name,
-            image_url: each,
+            image_url: picture,
             about: Faker::Creature::Dog.meme_phrase,
             gender: Faker::Creature::Dog.gender,
             coat_length: Faker::Creature::Dog.coat_length,

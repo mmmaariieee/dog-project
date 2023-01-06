@@ -17,7 +17,11 @@ function Home({ user, dogs, setDogs, onDeleteDog }) {
                     <DogContainer dogs={dogs} setDogs={setDogs} onDeleteDog={onDeleteDog} user={user} />
                 </>
             ) : (
-                <h1 className="center">Please Login or Sign Up</h1>
+                <div>
+                    <img className="center-button large-img" src='https://github.com/mmmaariieee/dog-project/blob/main/client/public/dogs.PNG' />
+                    <h1 className="center">Dog Store</h1>
+                    <h3 className="center">Please Login or Sign Up</h3>
+                </div>
             )}
         </>
     )

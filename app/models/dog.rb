@@ -13,7 +13,7 @@ class Dog < ApplicationRecord
 
   validates :image_url, presence: true
   validates :name, presence: true
-  validates :about, presence: true, length: { in: 10..200 }
+  validates :about, presence: true
   validates :gender, presence: true
   
   # validates :coat_length, presence: true

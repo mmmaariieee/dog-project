@@ -24,6 +24,11 @@ img {
   width: 60px;
 }
 
+.large-img {
+  padding-top: 50px;
+  width: 1000px;
+}
+
 /* dddddddddddd */
 
 :root {
