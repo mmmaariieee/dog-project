@@ -42,17 +42,15 @@ function EditDogForm({ user, onUpdateDog }) {
         console.log(formData)
     }
 
-    function handleSubmit(e){
+    function handleSubmit(e) {
         e.preventDefault()
-        fetch(`/dogs/${id}`,{
-          method:'PATCH',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify(formData)
+        fetch(`/dogs/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
         })
-        // .then(res => {
-        //     res.json().then(onUpdateDog);
-        //     navigate(`/dogs/${id}`);
-        // })
         .then((r) => r.json())
         .then((updatedDog) => {
             onUpdateDog(updatedDog);
@@ -63,8 +61,8 @@ function EditDogForm({ user, onUpdateDog }) {
 
     return(
         <>
-            <div id="edit-dog" className='App'>
-                <div >
+            <div className="form card">
+                    <h1>Edit Dog</h1>
                     <form onSubmit={handleSubmit}>
                         <label>Name: </label>
                         <input type='text' name='name' value={formData.name} onChange={handleChange} />
@@ -90,11 +88,8 @@ function EditDogForm({ user, onUpdateDog }) {
                         <label>About: </label>
                         <input type='text' name='about' value={formData.about} onChange={handleChange} />
 
-                        <input id="update-button" className="button" type='submit' value='Update Dog' 
-                        // onClick={handleSubmit} 
-                        />
+                        <input id="update-button" className="button" type='submit' value='Update Dog' onClick={handleSubmit} />
                     </form>
-                </div>
             </div>
         </>
     )

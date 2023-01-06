@@ -42,7 +42,7 @@ function UserProfile({user}){
             <h4>📞 {email}</h4>
             <h4>📤 {phone_number}</h4>
             <h3>The dogs I liked:</h3>
-            {unique.map(like => <div key={like.dog.id}>
+            {unique.map(like => <div className='card' key={like.dog.id}>
                 <img src={like.dog.image_url} alt={like.dog.name} />
                 <Link className="item-link" to={`/dogs/${like.dog.id}`}> <h2>{like.dog.name}</h2></Link>
             </div>)}

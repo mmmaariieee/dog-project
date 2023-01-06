@@ -52,8 +52,8 @@ function NewDogForm({ user, onAddDog }) {
     }
 
     return (
-        <div className="form">
-            <h2>New Dog</h2>
+        <div className="form card">
+            <h1>New Dog</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="image_url">Image URL: </label>
                 <input

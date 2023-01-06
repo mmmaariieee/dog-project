@@ -53,7 +53,7 @@ function DogCard({ user, dog, onDeleteDog }) {
 
     return (
         <>
-            <div className="dog">
+            <div className="card">
                 <button className="button"><Link id="edit-button" to={`/dogs/${id}/edit`}>Edit</Link></button>
                 <Link className="item-link" to={`/dogs/${id}`}> <h2>{name}</h2></Link>
                 <img src={image_url} alt={name} />

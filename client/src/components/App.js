@@ -38,13 +38,17 @@ function App() {
   }
 
   function handleUpdateDog(updatedDog) {
+    const updateDog = dogs.map((dog) => 
+      dog.id === updatedDog.id? updatedDog : dog  
+    )
+    setDogs(updateDog)
     // setDogs((dogs) =>
     //   dogs.map((dog) => {
     //     return dog.id === updatedDog.id ? updatedDog : dog;
     //   })
     // );
 
-    setDogs((dogs) => [...dogs, updatedDog]);
+    // setDogs((dogs) => [...dogs, updatedDog]);
 
   }
 

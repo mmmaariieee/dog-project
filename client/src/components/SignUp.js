@@ -39,10 +39,9 @@ function SignUp({ setUser }) {
 
 
     return (
-        <div>
+        <div className="form card">
+            <h1>Sign Up</h1>
             <form onSubmit={handleSubmit}>
-                <h1>Sign Up</h1>
-
                 <label htmlFor="image_url">Image URL</label>
                 <input
                     type="text"
