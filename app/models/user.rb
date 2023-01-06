@@ -18,6 +18,6 @@ class User < ApplicationRecord
     validates :last_name, presence: true
     validates :email, presence: true
     validates :phone_number, presence: true, numericality: true
-    validates :password, presence: true, confirmation: true, length: { in: 6..20 }
-    validates :password_confirmation, presence: true
+    # validates :password, presence: true, confirmation: true, length: { in: 6..20 }
+    # validates :password_confirmation, presence: true
 end
