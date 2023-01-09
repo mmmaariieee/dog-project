@@ -45,14 +45,16 @@ function UserProfile({user}){
             </div>
             <h3 className='center'>The dogs I liked:</h3>
             <div className='cards'>
-                {unique.map(like => 
-                <div className='card small-card' key={like.dog.id}>
-                    <div className='center'>
-                        <img className="img-h" src={like.dog.image_url} alt={like.dog.name} />
-                        <Link className="item-link" to={`/dogs/${like.dog.id}`}> <h2>{like.dog.name}</h2></Link>
-                        <p><i>{like.dog.location}</i></p>
-                    </div>
-                </div>)}
+                {unique.map(like =>
+                    <Link className="item-link" to={`/dogs/${like.dog.id}`}>
+                        <div className='card small-card' key={like.dog.id}>
+                            <div className='center'>
+                                <img className="img-h" src={like.dog.image_url} alt={like.dog.name} />
+                                <h2>{like.dog.name}</h2>
+                                <p><i>{like.dog.location}</i></p>
+                            </div>
+                        </div>
+                    </Link>)}
             </div>
         </div>
     )
