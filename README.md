@@ -2,9 +2,10 @@
 ## Capstone project in Flatiron School
 The dog app is a database of dogs that can be bought and sold.
 
+Walkthrough video: [https://www.youtube.com/watch?v=0EOrfRqWhBk](https://www.youtube.com/watch?v=0EOrfRqWhBk)
+
 ![img](pictures/welcome.png)
 
-Walkthrough video: [https://www.youtube.com/watch?v=0EOrfRqWhBk](https://www.youtube.com/watch?v=0EOrfRqWhBk)
 ## User is able to:
 
 
